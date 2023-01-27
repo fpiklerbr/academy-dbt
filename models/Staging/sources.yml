@@ -57,3 +57,4 @@ sources:
      - name: customer
      - name: countryregion
      - name: address
+     - name: creditcard
