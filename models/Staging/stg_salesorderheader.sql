@@ -7,17 +7,17 @@ SELECT
     ,date(shipdate) as data_envio
     ,cast(status as string) as status
     ,cast(onlineorderflag as boolean) as online_sn
-    ,cast(purchaseordernumber as string) as sk_ordemcompra
-    ,cast(accountnumber as string) as sk_conta
-    ,cast(customerid as int) as sk_cliente
-    ,cast(salespersonid	as int) as sk_vendedor
-    ,cast(territoryid as int) as sk_territorio
-    ,cast(billtoaddressid as int) as sk_endcobranca
-    ,cast(shiptoaddressid as int) as sk_endentrega
-    ,cast(shipmethodid as int) as sk_metodoentrega
-    ,cast(creditcardid as int) as sk_cartaocredito
+    ,cast(purchaseordernumber as string) as fk_ordemcompra
+    ,cast(accountnumber as string) as fk_conta
+    ,cast(customerid as int) as fk_cliente
+    ,cast(salespersonid	as int) as fk_vendedor
+    ,cast(territoryid as int) as fk_territorio
+    ,cast(billtoaddressid as int) as fk_endcobranca
+    ,cast(shiptoaddressid as int) as fk_endentrega
+    ,cast(shipmethodid as int) as fk_metodoentrega
+    ,cast(creditcardid as int) as fk_cartaocredito
     ,cast(creditcardapprovalcode as string) as cod_aprov_cartao		
-    ,cast(currencyrateid as int) as sk_tx_conversao_moeda
+    ,cast(currencyrateid as int) as fk_tx_conversao_moeda
     ,cast(subtotal as decimal) as subtotal_venda
     ,cast(taxamt as decimal) as subtotal_taxa_venda
     ,cast(freight as decimal) as subtotal_frete
