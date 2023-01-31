@@ -1,7 +1,7 @@
     with tb_regiaopais as(
 SELECT 
     cast(countryregioncode as STRING) as pk_regiaopais			
-    ,cast(name as STRING) as	nome_regiao
+    ,cast(name as STRING) as	nome_pais
 FROM {{ source('erp', 'countryregion') }}
 )
 

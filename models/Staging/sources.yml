@@ -4,11 +4,15 @@ sources:
   - name: erp
     schema: sap_adw
     tables:
+     - name: salesorderheader
+       columns:
+        - name: salesorderid
+          tests:
+            - unique
      - name: productvendor
      - name: purchaseorderdetail
      - name: purchaseorderheader
      - name: salesorderdetail
-     - name: salesorderheader
      - name: salesorderheadersalesreason
      - name: salesperson
      - name: salespersonquotahistory
@@ -57,3 +61,4 @@ sources:
      - name: customer
      - name: countryregion
      - name: address
+     - name: creditcard
