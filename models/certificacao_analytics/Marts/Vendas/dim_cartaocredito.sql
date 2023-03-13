@@ -3,4 +3,7 @@ SELECT
     *
 FROM  {{ ref('stg_creditcard') }}   
 )
-select * from cartaocredito
+select 
+    md5(id_cartaocredito) as sk_cartaocredito
+    ,cred.*    
+from cartaocredito cred
