@@ -1,23 +1,24 @@
 with endereco as (
-SELECT
+select
     *
-FROM  {{ ref('stg_address') }}   
+from  {{ ref('stg_address') }}   
 )
 ,
 estadoprovincia as (
-SELECT
+select
     *
-FROM  {{ ref('stg_stateprovince') }}   
+from  {{ ref('stg_stateprovince') }}   
 )
 ,
 paisregiao as (
-SELECT
+select
     *
-FROM  {{ ref('stg_countryregion') }}     
+from  {{ ref('stg_countryregion') }}     
 )
 
 select 
-    a.pk_endereco
+    md5(idendereco) as sk_endereco
+    ,a.idendereco
     ,a.endereco_linha1
     ,a.cidade_endereco
     ,b.nome_estadoprovincia
