@@ -1,7 +1,7 @@
 with tb_employee as(
     SELECT 	
-      cast(businessentityid as INTEGER) as fk_entidade			
-    , cast(nationalidnumber as INTEGER) as pk_colaborador
+      cast(businessentityid as INTEGER) as idvendedor			
+    , cast(nationalidnumber as INTEGER) as idcolaborador
     , cast(loginid as STRING) as login_colaborador
     , cast(jobtitle as STRING) as cargo_colaborador
     , date(birthdate) as data_nascimento

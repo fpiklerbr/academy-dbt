@@ -15,4 +15,4 @@ select
     ,a.idcliente
     ,b.nome_completo
 from clientes a
-left join pessoas b on a.fk_person = b.pk_person
+left join pessoas b on a.idpessoa = b.idpessoa

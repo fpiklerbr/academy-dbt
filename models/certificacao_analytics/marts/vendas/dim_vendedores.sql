@@ -17,9 +17,9 @@ from  {{ ref('stg_employee') }}
 )
 
 select
-    md5(a.id_vendedores) as sk_vendedores
-    , a.id_vendedores
+    md5(a.id_vendedores) as idvendedor
+    , a.idvendedor
     , b.nome_completo
 from vendedores a
-inner join pessoas b on a.pk_entidadebusiness = b.pk_person
-inner join colaboradores c on c.fk_entidade = a.pk_entidadebusiness
+inner join pessoas b on a.idvendedor = b.idpessoa
+inner join colaboradores c on c.idvendedor = a.idvendedor

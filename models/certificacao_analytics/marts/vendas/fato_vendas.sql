@@ -20,7 +20,7 @@ from
 )
 
 select
-      md5(coalesce(a.pk_pedidovenda || b.fk_produto)) as pk_venda
+      md5(coalesce(a.idpedidovenda || b.idproduto)) as pk_venda
     , md5(a.idpedidovenda) as fk_pedidovenda
     , a.data_pedido
     , md5(b.idproduto) as fk_produto
@@ -33,6 +33,6 @@ select
     , sum(b.preco_unitario) as preco_un
     , sum(b.quantidade_pedido) as soma_quantidade
 from fato_vendas a
-left join detalhes_vendas b on a.id_pedidovenda = b.id_pedidovenda
+left join detalhes_vendas b on a.idpedidovenda = b.idpedidovenda
 left join razao_vendas c on c.idvenda = a.idpedidovenda
 group by  a.idpedidovenda ,b.idproduto ,a.data_pedido ,c.idrazaovenda,a.idcartaocredito,a.idvendedor,a.idendcobranca,a.idcliente,a.status

@@ -24,5 +24,5 @@ select
     ,b.nomeestadoprovincia
     ,c.nomepais
 from endereco a
-left join estadoprovincia b on a.fk_estadoprovincia = b.pk_estadoprovincia
-left join paisregiao c on b.fk_estadoregiao = c.pk_regiaopais
+left join estadoprovincia b on a.idstadoprovincia = b.idestadoprovincia
+left join paisregiao c on b.idestadoregiao = c.idregiaopais

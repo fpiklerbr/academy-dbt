@@ -4,7 +4,7 @@ select
     , cast(addressline1 as STRING) as enderecolinha1
     , cast(addressline2 as STRING) as enderecolinha2
     , cast(city as STRING) as cidade_endereco
-    , cast(stateprovinceid as INTEGER) as fk_estadoprovincia	
+    , cast(stateprovinceid as INTEGER) as idestadoprovincia	
     , cast(postalcode as STRING) as cep
     , cast(spatiallocation as STRING) as alocacaoespac
 from {{ source('erp', 'address') }}

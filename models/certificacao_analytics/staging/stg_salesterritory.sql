@@ -1,8 +1,8 @@
 with tb_territoriovendas as(
 SELECT
-      cast(territoryid as INTEGER) as pk_territoriovendas			
+      cast(territoryid as INTEGER) as idterritoriovendas			
     , cast(name as STRING) as nome_territorio		
-    , cast(countryregioncode as STRING) as sk_paisregiao			
+    , cast(countryregioncode as STRING) as idpaisregiao			
 FROM {{ source('erp', 'salesterritory') }}
 )
 

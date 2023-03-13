@@ -1,11 +1,11 @@
 with tb_salesorderdetail as(
 SELECT 
-      cast(salesorderid as int) as id_pedidovenda
-    , cast(salesorderdetailid as int) as id_detalhevenda
-    , cast(carriertrackingnumber as string) as id_numordemregistro
+      cast(salesorderid as int) as idpedidovenda
+    , cast(salesorderdetailid as int) as iddetalhevenda
+    , cast(carriertrackingnumber as string) as idnumordemregistro
     , cast(orderqty as int) as quantidade_pedido
-    , cast(productid as int) as id_produto
-    , cast(specialofferid as int) as id_ordem_especial
+    , cast(productid as int) as idproduto
+    , cast(specialofferid as int) as idordemespecial
     , cast(unitprice as decimal) as preco_unitario
     , cast(unitpricediscount as decimal) as preco_descontado
 FROM {{ source('erp', 'salesorderdetail') }}
