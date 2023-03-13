@@ -1,24 +1,25 @@
 with vendedores as (
-SELECT
+select
     *
-FROM  {{ ref('stg_salesperson') }}   
+from  {{ ref('stg_salesperson') }}   
 )
 ,
 pessoas as (
-SELECT
+select
     *
-FROM  {{ ref('stg_person') }}   
+from  {{ ref('stg_person') }}   
 )
 ,
 colaboradores as (
-SELECT
+select
     *
-FROM  {{ ref('stg_employee') }}   
+from  {{ ref('stg_employee') }}   
 )
 
-SELECT
-    a.pk_entidadebusiness
-    ,b.nome_completo
+select
+    md5(a.id_vendedores) as sk_vendedores
+    , a.id_vendedores
+    , b.nome_completo
 from vendedores a
 inner join pessoas b on a.pk_entidadebusiness = b.pk_person
 inner join colaboradores c on c.fk_entidade = a.pk_entidadebusiness

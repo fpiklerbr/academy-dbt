@@ -1,10 +1,10 @@
 with razaovenda as (
-SELECT
+select
     *
-FROM  {{ ref('stg_salesreason') }}   
+from  {{ ref('stg_salesreason') }}   
 )
 
-SELECT
-    pk_razaovenda		
-    ,nome_razao_venda 
-from razaovenda
+select
+      md5(raz.idrazaovenda) as sk_razaovenda
+    , nomerazaovenda
+from razaovenda raz

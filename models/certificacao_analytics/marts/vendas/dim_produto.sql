@@ -1,6 +1,9 @@
 with produtos as (
-SELECT
+select
     *
-FROM  {{ ref('stg_product') }}   
+from  {{ ref('stg_product') }}   
 )
-select * from produtos
+select 
+      md5(prod.idproduto) as sk_produto
+    , prod.*
+from produtos prod

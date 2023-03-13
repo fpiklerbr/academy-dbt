@@ -1,12 +1,12 @@
 with tb_product as(
 SELECT 
-      cast(productid as INTEGER) as pk_produto
-    , cast(name as STRING) as nome_produto
-    , cast(productnumber as STRING) as num_produto							
-    , cast(standardcost as decimal) as custo_produto
-    , cast(listprice as decimal) as preco_listagem
-    , cast(productsubcategoryid as INTEGER) as subcat_produto
-    , cast(productmodelid as INTEGER) as fk_modeloproduto
+      cast(productid as INTEGER) as idproduto
+    , cast(name as STRING) as nomeproduto
+    , cast(productnumber as STRING) as numproduto							
+    , cast(standardcost as decimal) as custoproduto
+    , cast(listprice as decimal) as precolistagem
+    , cast(productsubcategoryid as INTEGER) as subcatproduto
+    , cast(productmodelid as INTEGER) as fkmodeloproduto
 FROM {{ source('erp', 'product') }}
 )
 select     

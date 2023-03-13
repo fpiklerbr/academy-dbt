@@ -1,6 +1,6 @@
 with tb_salesperson as(
 SELECT 
-      cast(businessentityid AS int) as pk_entidadebusiness			
+      cast(businessentityid AS int) as id_vendedores		
     , cast(territoryid as int) as fk_territorio
     , cast(salesquota as int) as cota_venda
     , cast(bonus	as int) as bonus_ent

@@ -20,19 +20,19 @@ from
 )
 
 select
-    md5(a.pk_pedidovenda || b.fk_produto) as idvenda
-    ,a.pk_pedidovenda as idpedido
-    ,a.data_pedido
-    ,b.fk_produto
-    ,c.fk_razaovenda
-    ,a.fk_cartaocredito
-    ,a.fk_vendedor
-    ,a.fk_endcobranca
-    ,a.fk_cliente
-    ,a.status
-    ,sum(b.preco_unitario) as preco_un
-    ,sum(b.quantidade_pedido) as soma_quantidade
+      md5(coalesce(a.pk_pedidovenda || b.fk_produto)) as pk_venda
+    , md5(a.idpedidovenda) as fk_pedidovenda
+    , a.data_pedido
+    , md5(b.idproduto) as fk_produto
+    , md5(c.idrazaovenda) as fk_razaovenda
+    , md5(a.idcartaocredito) as fk_cartaocredito
+    , md5(a.idvendedor) as fk_vendedor
+    , md5(a.idendcobranca) as fk_endcobranca
+    , md5(a.idcliente) as fk_cliente
+    , a.status
+    , sum(b.preco_unitario) as preco_un
+    , sum(b.quantidade_pedido) as soma_quantidade
 from fato_vendas a
-left join detalhes_vendas b on a.pk_pedidovenda = b.fk_pedidovenda
-left join razao_vendas c on c.pk_idvenda = a.pk_pedidovenda
-group by  a.pk_pedidovenda ,b.fk_produto ,a.data_pedido ,c.fk_razaovenda,a.fk_cartaocredito,a.fk_vendedor,a.fk_endcobranca,a.fk_cliente,a.status
+left join detalhes_vendas b on a.id_pedidovenda = b.id_pedidovenda
+left join razao_vendas c on c.idvenda = a.idpedidovenda
+group by  a.idpedidovenda ,b.idproduto ,a.data_pedido ,c.idrazaovenda,a.idcartaocredito,a.idvendedor,a.idendcobranca,a.idcliente,a.status

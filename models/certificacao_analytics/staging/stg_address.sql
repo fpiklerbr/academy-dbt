@@ -6,7 +6,7 @@ select
     , cast(city as STRING) as cidade_endereco
     , cast(stateprovinceid as INTEGER) as fk_estadoprovincia	
     , cast(postalcode as STRING) as cep
-    , cast(spatiallocation as STRING) as alocacao_espac
+    , cast(spatiallocation as STRING) as alocacaoespac
 from {{ source('erp', 'address') }}
 )
 select     
