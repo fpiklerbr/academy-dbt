@@ -22,7 +22,7 @@ from
 select
       md5(coalesce(a.idpedidovenda || b.idproduto)) as pk_venda
     , md5(a.idpedidovenda) as fk_pedidovenda
-    , a.data_pedido
+    , a.datapedido
     , md5(b.idproduto) as fk_produto
     , md5(c.idrazaovenda) as fk_razaovenda
     , md5(a.idcartaocredito) as fk_cartaocredito
@@ -35,4 +35,5 @@ select
 from fato_vendas a
 left join detalhes_vendas b on a.idpedidovenda = b.idpedidovenda
 left join razao_vendas c on c.idvenda = a.idpedidovenda
-group by  a.idpedidovenda ,b.idproduto ,a.data_pedido ,c.idrazaovenda,a.idcartaocredito,a.idvendedor,a.idendcobranca,a.idcliente,a.status
+group by  a.idpedidovenda ,b.idproduto ,a.datapedido ,c.idrazaovenda
+,a.idcartaocredito,a.idvendedor,a.idendcobranca,a.idcliente,a.status

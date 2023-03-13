@@ -17,7 +17,7 @@ from  {{ ref('stg_employee') }}
 )
 
 select
-    md5(a.id_vendedores) as idvendedor
+    md5(a.idvendedor) as sk_vendedor
     , a.idvendedor
     , b.nome_completo
 from vendedores a

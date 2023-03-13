@@ -1,6 +1,6 @@
 with tb_product as(
 SELECT 
-      cast(productid as INTEGER) as idproduto
+      cast(productid as STRING) as idproduto
     , cast(name as STRING) as nomeproduto
     , cast(productnumber as STRING) as numproduto							
     , cast(standardcost as decimal) as custoproduto

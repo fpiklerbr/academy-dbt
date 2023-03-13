@@ -1,6 +1,6 @@
 with tb_employee as(
     SELECT 	
-      cast(businessentityid as INTEGER) as idvendedor			
+      cast(businessentityid as STRING) as idvendedor			
     , cast(nationalidnumber as INTEGER) as idcolaborador
     , cast(loginid as STRING) as login_colaborador
     , cast(jobtitle as STRING) as cargo_colaborador

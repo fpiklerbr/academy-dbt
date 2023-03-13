@@ -17,12 +17,12 @@ from  {{ ref('stg_countryregion') }}
 )
 
 select 
-    md5(idendereco) as sk_endereco
-    ,a.idendereco
-    ,a.enderecolinha1
-    ,a.cidadeendereco
-    ,b.nomeestadoprovincia
-    ,c.nomepais
+      md5(idendereco) as sk_endereco
+    , a.idendereco
+    , a.enderecolinha1
+    , a.cidadeendereco
+    , b.nomeestadoprovincia
+    , c.nomepais
 from endereco a
-left join estadoprovincia b on a.idstadoprovincia = b.idestadoprovincia
+left join estadoprovincia b on a.idestadoprovincia = b.idestadoprovincia
 left join paisregiao c on b.idestadoregiao = c.idregiaopais

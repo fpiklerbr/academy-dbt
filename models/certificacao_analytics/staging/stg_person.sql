@@ -1,6 +1,6 @@
 with tb_person as(
 SELECT 	
-      cast(businessentityid as INTEGER) as idpessoa				
+      cast(businessentityid as STRING) as idpessoa				
     , cast(persontype as STRING) as tipo_entidade
     , cast(namestyle as BOOLEAN) as estilo_nome
     , cast(title as STRING) as cargo_nome
