@@ -1,7 +1,7 @@
 with tb_salesorderreason as(
 SELECT 
-    CAST(salesorderid as int) as pk_idvenda
-    ,cast(salesreasonid as int) as fk_razaovenda
+      cast(salesorderid as STRING) as idvenda
+    , cast(salesreasonid as STRING) as idrazaovenda
 FROM {{ source('erp', 'salesorderheadersalesreason') }}
 )
 select     
