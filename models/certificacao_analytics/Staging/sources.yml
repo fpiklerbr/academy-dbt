@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: erp
-  - description: Fonte de dados da northwind contendo todos os fatos e dimensões de ordem de vendas, endereços e detalhes das vendas.
     schema: sap_adw
+    description: Fonte de dados da northwind contendo todos os fatos e dimensões de ordem de vendas, endereços e detalhes das vendas.
     tables:
      - name: salesorderheader
        columns:
@@ -12,22 +12,29 @@ sources:
             - unique
             - not_null
      - name: salesorderdetail
-     - description: Dimensional com detalhes de cada ordem de compra.     
+       description: Dimensional com detalhes de cada ordem de compra. 
+     - name: creditcard
+       description: Dimensional com detalhes do cartão de crédito que foi realizada a compra.
      - name: salesorderheadersalesreason
-     - Description: Dimensional com a razão de venda das ordens de compra.
+       Description: Dimensional com a razão de venda das ordens de compra.
+     - name: stateprovince
+       description: Dimensional com informações com o estado ou província de onde foi realizada a compra.
      - name: salesperson
-     - Description: Dimensional com detalhes da pessoa que realizou a venda.
+       Description: Dimensional com detalhes da pessoa que realizou a venda.
+     - name: salesterritory
+       description: Dimensional com detalhes sobre o território em que foi venda a venda.
      - name: salesreason
-     - Description: Dimensional com detalhes do motivo da venda.
+       Description: Dimensional com detalhes do motivo da venda.
      - name: employee
-     - Description: Dimensional com detalhes sobre o colaborador que efetuou a venda.
+       Description: Dimensional com detalhes sobre o colaborador que efetuou a venda.
      - name: person
-     - Description: Dimensional detalhando o sujeito stakeholder da venda (pode ser colaborador ou cliente).
+       Description: Dimensional detalhando o sujeito stakeholder da venda (pode ser colaborador ou cliente).
      - name: product
-     - Description: Dimensional trazendo detalhes do produto vendido.
+       Description: Dimensional trazendo detalhes do produto vendido.
      - name: customer
-     - Description: Dimensional trazendo detalhes do cliente.
+       Description: Dimensional trazendo detalhes do cliente.
      - name: countryregion
-     - Description: Dimensional trazendo detalhamento da região, país, etc.
+       Description: Dimensional trazendo detalhamento da região, país, etc.
      - name: address
-     - Description: Dimensional trazendo detalhamento de endereço, rua, cidade, etc.
+       Description: Dimensional trazendo detalhamento de endereço, rua, cidade, etc.
+
