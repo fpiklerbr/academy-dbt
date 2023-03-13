@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: erp
+  - description: Fonte de dados da northwind contendo todos os fatos e dimensões de ordem de vendas, endereços e detalhes das vendas.
+    schema: sap_adw
+    tables:
+     - name: salesorderheader
+       columns:
+        - name: salesorderid
+          tests:
+            - unique
+            - not_null
+     - name: salesorderdetail
+     - description: Dimensional com detalhes de cada ordem de compra.     
+     - name: salesorderheadersalesreason
+     - Description: Dimensional com a razão de venda das ordens de compra.
+     - name: salesperson
+     - Description: Dimensional com detalhes da pessoa que realizou a venda.
+     - name: salesreason
+     - Description: Dimensional com detalhes do motivo da venda.
+     - name: employee
+     - Description: Dimensional com detalhes sobre o colaborador que efetuou a venda.
+     - name: person
+     - Description: Dimensional detalhando o sujeito stakeholder da venda (pode ser colaborador ou cliente).
+     - name: product
+     - Description: Dimensional trazendo detalhes do produto vendido.
+     - name: customer
+     - Description: Dimensional trazendo detalhes do cliente.
+     - name: countryregion
+     - Description: Dimensional trazendo detalhamento da região, país, etc.
+     - name: address
+     - Description: Dimensional trazendo detalhamento de endereço, rua, cidade, etc.
